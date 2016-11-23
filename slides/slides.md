@@ -35,9 +35,9 @@ def ssspDijkstra( V, E, w, src ):
 ---
 ## Dijkstra: correctness
 + **Invariant**: at top of loop, *u.d* = *&delta;(src,u)* &forall; *u* &notin; *Q*
-+ **Proof**: suppose **not**: <br/>
-  let *u* be the **first** vertex popped from *Q*
-  with *u.d* &ne; *&delta;(src,u)*
++ **Proof**: suppose **not**:
+  let *u* &notin; *Q* with *u.d* &ne; *&delta;(src,u)*
+  + Assume *u* is the **first** such vertex popped from *Q*
   + &exist; **path** *src* &#x21DD; *u* (or else *u.d* = *&infin;* = *&delta;(src,u)*)
 + Let *p* be a **shortest** path *src* &#x21DD; *u*
   + Let *(x,y)* be the **first** edge in *p* crossing from *!Q* to *Q*
@@ -155,7 +155,7 @@ def Fast_APSP( W ):
   + \`d\_(ij)^((k))\` = weight of shortest-path
     from *i* to *j* where all **intermediate** vertices
     are in the subset *{1 .. k}* of vertices
-+ Let \`p\(ij)\` be a **shortest** path *i* &rarr; *j*
++ Let \`p\(ij)\` be a **shortest** path *i* &#x21DD; *j*
   with intermediate vertices in *{1 .. k}*
   + If *k* is **on** the path, then **split** *p*
     into \`p\_(ik) and p\_(kj)\`
@@ -187,12 +187,12 @@ def FloydWarshall( W ):
 ---
 ## F-W for transitive closure
 + The **transitive closure** \`(V, E\*)\` of *(V, E)* is:
-  + *(i,j)* &in; \`E\*\` iff &exists; **path** *i* &rarr; *j*
+  + *(i,j)* &in; \`E\*\` iff &exists; **path** *i* &#x21DD; *j*
     + i.e., if *j* is **reachable** from *i*
 + One method: run **Floyd-Warshall** with *w=1* on all edges
   + &exists; path from *i* to *j* if \`d\_(ij) < oo\`
 + Even **simpler**: \`d\_(ij)^((k))\` is just a **bit** (boolean)
-  + Tracks if path *i* &rarr; *j* **exists** through *{1 .. k}*
+  + Tracks if path *i* &#x21DD; *j* **exists** through *{1 .. k}*
 + **Recurrence**: \`d\_(ij)^((k))
   = d\_(ij)^((k-1)) OR (d\_(ik)^((k-1)) AND d\_(kj)^((k-1)))\`
   + Same *pseudocode* structure as Floyd-Warshall
@@ -210,7 +210,7 @@ def FloydWarshall( W ):
 + But Dijkstra can't handle **negative weights**:
   + **Reweight** without changing shortest paths
 + Given \`h:V -> RR\`, let *w'(u,v)* = *w(u,v)* + *h(u)* - *h(v)*
-  + *p* is a **shortest path** *u* &rarr; *v* under *w* <br/>
+  + *p* is a **shortest path** *u* &#x21DD; *v* under *w* <br/>
     iff *p* is a **shortest path** under *w'*
   + *w'(p)* = *w(p)* + *h(u)* - *h(v)* is **independent** of
     the intermediate vertices
