@@ -9,7 +9,10 @@
 ## Outline for today
 + Single-source shortest paths: Dijkstra
 + All-pairs shortest paths
-+ Tractability
+  + Dynamic programming by path length: \`O(|V|^4)\`
+  + Exponential speedup: \`O(|V|^3 lg |V|)\`
+  + Floyd-Warshall (dyn prog by vertex subset): \`O(|V|^3)\`
+  + Johnson (iterative Dijkstra): \`O(|V|^2 lg |V| + |V||E|)\`
 
 ---
 ## Dijkstra's algo for SSSP
