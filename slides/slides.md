@@ -21,6 +21,11 @@
 + **Greedy** choice: select *u* with **lowest** *u.d*
 
 <div class="imgbox"><div><pre><code data-trim>
+def relaxEdge( u, v, w ):
+  if v.d > u.d + w( u, v ):
+    v.d = u.d + w( u, v )
+    v.parent = u
+
 def ssspDijkstra( V, E, w, src ):
   initSingleSource( V, E, src )
   Q = new PriorityQueue( V )
