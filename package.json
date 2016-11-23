@@ -1,16 +1,16 @@
 {
-  "name": "reveal-skel",
+  "name": "@cmpt231-16fa/lec12",
   "version": "1.0.0",
-  "repository": "sermons/reveal-skel",
-  "description": "A template for Reveal.js-based presentations",
+  "repository": "cmpt231-16fa/lec12",
+  "description": "Lecture 12, CMPT231",
   "keywords": ["slides", "lectures", "talks", "ppt"],
   "author": "Sean Ho <seanho@seanho.com> (http://seanho.com)",
   "config": {
-    "pretty_url": "reveal-skel.seanho.com",
-    "cname": "reveal-skel.seanho.com",
+    "pretty_url": "cmpt231.seanho.com/lec12",
+    "cname": "",
     "multiplex": {
       "url": "https://mp-seanho00.rhcloud.com:8443/",
-      "id": "22bc761ffc97809b"
+      "id": "461298697561f23d"
     },
     "git": {
       "name": "Sean Ho",
@@ -18,9 +18,9 @@
     },
     "history": [
       {
-        "venue": "Venue of talk",
-        "city": "Location",
-        "date": "2000-01-01"
+        "venue": "Trinity Western University",
+        "city": "Langley",
+        "date": "2016-11-29"
       }
     ]
   },
