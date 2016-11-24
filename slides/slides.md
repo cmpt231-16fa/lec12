@@ -1,6 +1,6 @@
 # CMPT231
-## Lecture 12: ch 25, 34
-### Shortest Paths, NP Completeness
+## Lecture 12: ch 25
+### All-Pairs Shortest Paths
 
 ---
 ## Devotional
