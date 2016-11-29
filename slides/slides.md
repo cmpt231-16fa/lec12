@@ -288,11 +288,17 @@ def FloydWarshall( W ):
 
 + **Recurrence**: \`d\_(ij)^((k))
   = min(d\_(ij)^((k-1)), d\_(ik)^((k-1)) + d\_(kj)^((k-1)))\`
-  + **First** choice: *k* **not** on path
-  + **Second** choice: two **subpaths** through *k*
-  + **Base** case: \`d\_(ij)^((0))=w\_(ij)\`
-  + Final **solution**: \`D^((n)) = (d\_(ij)^((n)))\`
-+ **Complexity**: \`Theta(|V|^3)\`
+
+<div class="imgbox"><div><ul>
+<li> Either <em>k</em> <strong>not</strong> on path, or <br/>
+  two <strong>subpaths</strong> through <em>k</em> </li> <ul>
+  <li> <strong>Base</strong> case: \`d\_(ij)^((0))=w\_(ij)\` </li>
+  <li> Final <strong>solution</strong>: \`D^((n)) = (d\_(ij)^((n)))\` </li>
+  </ul></li>
+<li> <strong>Complexity</strong>: \`Theta(|V|^3)\` </li>
+</ul></div><div>
+![Example Floyd-Warshall: Fig 25-2](static/img/Fig-25-2.svg)
+</div></div>
 
 ---
 ## F-W for transitive closure
