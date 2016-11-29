@@ -1,11 +1,14 @@
+<!-- .slide: data-background-image="https://sermons.seanho.com/img/bg/unsplash-DLwUVlzrP0Q-waves_rocks.jpg" -->
 # CMPT231
 ## Lecture 12: ch 25
 ### All-Pairs Shortest Paths
 
 ---
+<!-- .slide: data-background-image="https://sermons.seanho.com/img/bg/unsplash-DLwUVlzrP0Q-waves_rocks.jpg" -->
 ## Devotional
 
 ---
+<!-- .slide: data-background-image="https://sermons.seanho.com/img/bg/unsplash-DLwUVlzrP0Q-waves_rocks.jpg" -->
 ## Outline for today
 + Single-source shortest paths: Dijkstra
 + All-pairs shortest paths
@@ -266,3 +269,5 @@ def Johnson( G, w ):
 ---
 ## Outline
 
+---
+<!-- .slide: data-background-image="https://sermons.seanho.com/img/bg/unsplash-DLwUVlzrP0Q-waves_rocks.jpg" class="empty" -->
