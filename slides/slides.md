@@ -216,6 +216,10 @@ def APSPExtend( L, W ):
 + **But**: notice *Extend* looks a lot like a **matrix multiply**!
 
 ---
+## Dynamic prog APSP: example
+![Example of dynamic programming solution, Fig 25-1](static/img/Fig-25-1.svg)
+
+---
 ## Exponential bottom-up
 + **Matrix power** \`A^n\` can be calculated by
   + \`A \* A \* ... \* A\` (*n-1* times), or by
