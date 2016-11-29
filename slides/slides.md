@@ -338,10 +338,17 @@ def FloydWarshall( W ):
     + *w(s,v)* = 0 &forall; *v*
   + **Compute** *&delta;(s,v)* &forall; *v* (e.g., with Bellman-Ford)
   + **Reweight** edges using *h(v)* = *&delta;(s,v)*
+
+![Johnson reweight, Fig-25-6(ab)](static/img/Fig-25-6ab.png)
+
+---
+## Johnson's reweighting
 + Why does this eliminate **negative weights**?
   + **Triangle inequality**: *&delta;(s,v)* &le; *&delta;(s,u)* + *w(u,v)*
   + Substitute **defn** of *h*: *h(v)* &le; *h(u)* + *w(u,v)*
   + Apply **reweighting**: *w'(u,v)* = *w(u,v)* + *h(u)* - *h(v)* &ge; 0
+
+![Johnson reweight, Fig-25-6(ab)](static/img/Fig-25-6ab.png)
 
 ---
 ## Johnson all-pairs
