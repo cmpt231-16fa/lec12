@@ -21,12 +21,57 @@ is sown in peace by those who **make peace**.
 ---
 <!-- .slide: data-background-image="https://sermons.seanho.com/img/bg/unsplash-DLwUVlzrP0Q-waves_rocks.jpg" -->
 ## Outline for today
-+ Single-source shortest paths: Dijkstra
++ Single-source shortest paths
+  + Dijkstra: \`O(|V| log |V| + |E|)\`
 + All-pairs shortest paths
   + Dynamic programming by path length: \`O(|V|^4)\`
-  + Exponential speedup: \`O(|V|^3 lg |V|)\`
+  + Exponential speedup: \`O(|V|^3 log |V|)\`
   + Floyd-Warshall (dyn prog by vertex subset): \`O(|V|^3)\`
-  + Johnson (iterative Dijkstra): \`O(|V|^2 lg |V| + |V||E|)\`
+  + Johnson (iterative Dijkstra): \`O(|V|^2 log |V| + |V||E|)\`
+
+---
+## Single-source shortest paths
++ **Output**: for each vertex *v* &in; V, store:
+  + *v.parent*: links form a **tree** rooted at source
+  + *v.d*: shortest-path **weight** from source
+    + All initially *&infin;*, except *src.d* = *0*
++ Method: **edge relaxation**
+  + Will **using** the edge *(u,v)* give us a
+    **shorter** path to *v*?
++ Algorithms differ in **sequence** of relaxing edges
+
+```
+def relaxEdge( u, v, w ):
+  if v.d > u.d + w( u, v ):
+    v.d = u.d + w( u, v )
+    v.parent = u
+```
+
+---
+## Bellman-Ford algo for SSSP
++ Allows **negative-weight** edges
+  + If any **net-negative** cycle is reachable, returns *FALSE*
++ **Relax** every edge, *|V|-1* times (**complexity**?)
++ Guaranteed to **converge**: shortest paths &le; *|V|-1* edges
+  + Each **iteration** relaxes one edge along shortest path
+
+<div class="imgbox"><div><pre><code data-trim>
+def initSingleSource( V, E, src ):
+  for v in V:
+    v.d = &infin;
+  src.d = 0
+
+def ssspBellmanFord( V, E, w, src ):
+  initSingleSource( V, E, src )
+  for i in 1 .. |V| - 1:
+    for (u,v) in E:
+      relaxEdge( u, v, w )
+  for (u,v) in E:
+    if v.d > u.d + w( u, v ):
+      return FALSE
+</code></pre></div><div>
+![Bellman-Ford: Fig 24-4(b)](static/img/Fig-24-4b.png)
+</div></div>
 
 ---
 ## Dijkstra's algo for SSSP
