@@ -200,7 +200,7 @@ def ssspDijkstra( V, E, w, src ):
 
 ---
 ![Example of dynamic programming solution, Fig 25-1](static/img/Fig-25-1.svg)
-<!-- .element: style="width:"70%" -->
+<!-- .element: style="width:"50%" -->
 
 ---
 ## Dynamic prog: bottom-up
