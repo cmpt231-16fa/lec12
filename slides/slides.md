@@ -75,8 +75,8 @@ def ssspBellmanFord( V, E, w, src ):
 
 ---
 ## Dijkstra's algo for SSSP
-+ **Doesn't** handle negative-weight edges
-+ Weighted version of **breadth-first** search
++ **Doesn't** handle *negative-weight* edges
++ *Weighted* version of **breadth-first** search
 + Use **priority queue** instead of FIFO
   + Keys are the **shortest-path** estimates *v.d*
   + Similar to **Prim** but calculates *v.d*
@@ -108,9 +108,10 @@ def ssspDijkstra( V, E, w, src ):
   + &exist; **path** *src* &#x21DD; *u* (or else *u.d* = *&infin;* = *&delta;(src,u)*)
 
 <div class="imgbox"><div><ul>
-<li> Let <em>p</em> be a <strong>shortest</strong> path <em>src</em> &#x21DD; <em>u</em> <ul>
-  <li> Let <em>(x,y)</em> be the <strong>first</strong> edge in <em>p</em> crossing from <em>!Q</em> to <em>Q</em>
-  <li> So <em>x.d</em> = <em>&delta;(src,d)</em>, since <em>u</em> is <strong>first</strong> with <em>u.d</em> &ne; <em>&delta;(src,u)</em>
+<li> Let <em>p</em> be a <strong>shortest</strong> path from <em>src</em> &#x21DD; <em>u</em> <ul>
+  <li> Let <em>(x,y)</em> be the <strong>first</strong> edge in <em>p</em> crossing from <em>!Q</em> to <em>Q</em></li>
+  <li> Since <em>u</em> is the <strong>first</strong> vertex to have <em>u.d</em> &ne; <em>&delta;(src,u)</em>,
+  <br/> hence <em>x.d</em> = <em>&delta;(src,d)</em></li>
   </ul></li>
 </ul></div><div>
 ![Dijkstra proof, Fig 24-7](static/img/Fig-24-7.svg)
@@ -118,12 +119,15 @@ def ssspDijkstra( V, E, w, src ):
 
 ---
 ## Dijkstra: correctness
-+ We **relaxed** *(x,y)*, so *y.d* = *&delta;(src,y)* (by **convergence**)
-  + And *y* is on the shortest path, so *&delta;(src,y)* &le; *&delta;(src,u)* &le; *u.d*
++ So *x.d* = *&delta;(src,d)* (i.e., *x* has **converged**)
++ By **convergence** property, after we **relaxed** *(x,y)*,
+  + now *y.d* = *&delta;(src,y)* (i.e., *y* has **converged**)
+  + And *y* is on the **shortest path**, so *&delta;(src,y)* &le; *&delta;(src,u)* &le; *u.d*
 + But **both** *y* and *u* &in; *Q* when we `popMin()`, so *u.d* &le; *y.d*
 + Hence *u.d* = *y.d* = *&delta;(src,u)*, a **contradiction**
 
 ![Dijkstra proof, Fig 24-7](static/img/Fig-24-7.svg)
+<!-- .element: style="width:60%" -->
 
 ---
 ## Dijkstra: complexity
