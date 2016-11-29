@@ -5,7 +5,18 @@
 
 ---
 <!-- .slide: data-background-image="https://sermons.seanho.com/img/bg/unsplash-DLwUVlzrP0Q-waves_rocks.jpg" -->
-## Devotional
+## James 3:13,17-18 <span class="ref">(NASB)</span>
+Who among you is **wise** and **understanding**? <br/>
+Let him show by his **good behavior** <br/>
+his deeds in the **gentleness** of wisdom.
+
+But the wisdom from above is first **pure**, <br/>
+then **peaceable**, **gentle**, **reasonable**, <br/>
+full of **mercy** and good **fruits**, <br/>
+**unwavering**, without **hypocrisy**.
+
+And the seed whose fruit is **righteousness**  <br/>
+is sown in peace by those who **make peace**.
 
 ---
 <!-- .slide: data-background-image="https://sermons.seanho.com/img/bg/unsplash-DLwUVlzrP0Q-waves_rocks.jpg" -->
