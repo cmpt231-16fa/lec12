@@ -290,7 +290,7 @@ def FloydWarshall( W ):
   + **Second** choice: two **subpaths** through *k*
   + **Base** case: \`d\_(ij)^((0))=w\_(ij)\`
   + Final **solution**: \`D^((n)) = (d\_(ij)^((n)))\`
-+ **Dynamic programming**: \`Theta(|V|^3)\`
++ **Complexity**: \`Theta(|V|^3)\`
 
 ---
 ## F-W for transitive closure
