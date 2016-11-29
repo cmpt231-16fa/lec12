@@ -173,11 +173,11 @@ def ssspDijkstra( V, E, w, src ):
 + **Naive** solution: do *Bellman-Ford* for each vertex:
   + \`O(|V|^2 E)\`: if **dense**, then *E* \`in Theta(|V|^2)\`,
     so \`O(|V|^4)\`
-+ If no *negative-weight* edges, try **Dijkstra**:
-  + **Binary heap**: O( *|V| |E| lg |V|* ),
-    or \`O(|V|^3 log |V|)\` if *dense*
++ If no *negative* edges, try **Dijkstra**, *|V|* times:
+  + **Binary heap**: \`O( |V| |E| log |V| )\`,
+    \`= O(|V|^3 log |V|)\` if *dense*
   + **Fibonacci heap**: \`O(|V|^2 log |V| + |V||E|)\`,
-    or \`O(|V|^3)\` if *dense*
+    \`= O(|V|^3)\` if *dense*
 + **Floyd-Warshall**: \`O(|V|^3)\`, *even* if dense,
   <br/> and handles negative edges
 
@@ -197,6 +197,10 @@ def ssspDijkstra( V, E, w, src ):
 + After **one** iteration: \`l\_(ij)^((1)) = w\_(ij)\`
   + After &ge; *|V|-1* iterations: \`l\_(ij)^((m)) = delta\_(ij)\`
     (i.e., **solved**)
+
+---
+![Example of dynamic programming solution, Fig 25-1](static/img/Fig-25-1.svg)
+<!-- .element: style="width:"70%" -->
 
 ---
 ## Dynamic prog: bottom-up
@@ -220,10 +224,6 @@ def APSPExtend( L, W ):
 + **But**: notice *Extend* looks a lot like a **matrix multiply**!
 
 ---
-## Dynamic prog APSP: example
-![Example of dynamic programming solution, Fig 25-1](static/img/Fig-25-1.svg)
-
----
 ## Exponential bottom-up
 + **Matrix power** \`A^n\` can be calculated by
   + \`A \* A \* ... \* A\` (*n-1* times), or by
@@ -232,7 +232,7 @@ def APSPExtend( L, W ):
 + Now apply this to *APSPExtend*'s triply-nested *for* loop
   + If *n* is not a **power of 2**, we'll overshoot
   + That's ok, it **converges** after \`L^((|V|))\`
-+ **Complexity**: \`Theta(|V|^3 lg |V|)\`: much better!
++ **Complexity**: \`Theta(|V|^3 log |V|)\`: much better!
 
 ```
 def Fast_APSP( W ):
@@ -255,13 +255,11 @@ def Fast_APSP( W ):
 
 ---
 ## Floyd-Warshall: substructure
-+ Define **subtasks** not by *path length m*, but
-  + By **vertices** in a subset of *V*:
++ **Subtasks**: not by *path length*, but by **subset** of *V*:
   + \`d\_(ij)^((k))\` = weight of shortest-path
-    from *i* to *j* where all **intermediate** vertices
+    from *i* to *j* where <br/> all **intermediate** vertices
     are in the subset *{1 .. k}* of vertices
-+ Let \`p\_(ij)\` be a **shortest** path *i* &#x21DD; *j* <br/>
-  with intermediate vertices in *{1 .. k}*
++ Let \`p\_(ij)\` be **shortest** path *i* &#x21DD; *j* w/nodes in *{1 .. k}*
   + If *k* is **not** on the path, then *p* has vertices
     only in *{1 .. k-1}*
   + If *k* is **on** the path, then **split** *p*
