@@ -106,13 +106,24 @@ def ssspDijkstra( V, E, w, src ):
   let *u* &notin; *Q* with *u.d* &ne; *&delta;(src,u)*
   + Assume *u* is the **first** such vertex popped from *Q*
   + &exist; **path** *src* &#x21DD; *u* (or else *u.d* = *&infin;* = *&delta;(src,u)*)
-+ Let *p* be a **shortest** path *src* &#x21DD; *u*
-  + Let *(x,y)* be the **first** edge in *p* crossing from *!Q* to *Q*
-  + So *x.d* = *&delta;(src,d)*, since *u* is **first** with *u.d* &ne; *&delta;(src,u)*
+
+<div class="imgbox"><div><ul>
+<li> Let <em>p</em> be a <strong>shortest</strong> path <em>src</em> &#x21DD; <em>u</em> <ul>
+  <li> Let <em>(x,y)</em> be the <strong>first</strong> edge in <em>p</em> crossing from <em>!Q</em> to <em>Q</em>
+  <li> So <em>x.d</em> = <em>&delta;(src,d)</em>, since <em>u</em> is <strong>first</strong> with <em>u.d</em> &ne; <em>&delta;(src,u)</em>
+  </ul></li>
+</ul></div><div>
+![Dijkstra proof, Fig 24-7](static/img/Fig-24-7.svg)
+</div></div>
+
+---
+## Dijkstra: correctness
 + We **relaxed** *(x,y)*, so *y.d* = *&delta;(src,y)* (by **convergence**)
   + And *y* is on the shortest path, so *&delta;(src,y)* &le; *&delta;(src,u)* &le; *u.d*
 + But **both** *y* and *u* &in; *Q* when we `popMin()`, so *u.d* &le; *y.d*
 + Hence *u.d* = *y.d* = *&delta;(src,u)*, a **contradiction**
+
+![Dijkstra proof, Fig 24-7](static/img/Fig-24-7.svg)
 
 ---
 ## Dijkstra: complexity
