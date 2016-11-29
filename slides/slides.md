@@ -21,13 +21,13 @@ is sown in peace by those who **make peace**.
 ---
 <!-- .slide: data-background-image="https://sermons.seanho.com/img/bg/unsplash-DLwUVlzrP0Q-waves_rocks.jpg" -->
 ## Outline for today
-+ Single-source shortest paths
-  + Dijkstra: \`O(|V| log |V| + |E|)\`
-+ All-pairs shortest paths
-  + Dynamic programming by path length: \`O(|V|^4)\`
-  + Exponential speedup: \`O(|V|^3 log |V|)\`
-  + Floyd-Warshall (dyn prog by vertex subset): \`O(|V|^3)\`
-  + Johnson (iterative Dijkstra): \`O(|V|^2 log |V| + |V||E|)\`
++ **Single-source** shortest paths
+  + **Dijkstra**: \`O(|V| log |V| + |E|)\`
++ **All-pairs** shortest paths
+  + **Dynamic** programming by *path length*: \`O(|V|^4)\`
+  + **Exponential** speedup: \`O(|V|^3 log |V|)\`
+  + **Floyd-Warshall** (dyn prog by *vertex subset*): \`O(|V|^3)\`
+  + **Johnson** (iterative Dijkstra): \`O(|V|^2 log |V| + |V||E|)\`
 
 ---
 ## Single-source shortest paths
@@ -140,7 +140,15 @@ def ssspDijkstra( V, E, w, src ):
   + **Total** time: O( *|V| lg |V|* + *|E|* )
 
 ---
-## Outline
+<!-- .slide: data-background-image="https://sermons.seanho.com/img/bg/unsplash-DLwUVlzrP0Q-waves_rocks.jpg" -->
+## Outline for today
++ Single-source shortest paths
+  + Dijkstra: \`O(|V| log |V| + |E|)\`
++ **All-pairs shortest paths**
+  + **Dynamic programming by path length:** \`O(|V|^4)\`
+  + **Exponential speedup:** \`O(|V|^3 log |V|)\`
+  + Floyd-Warshall (dyn prog by vertex subset): \`O(|V|^3)\`
+  + Johnson (iterative Dijkstra): \`O(|V|^2 log |V| + |V||E|)\`
 
 ---
 ## All-pairs shortest paths
@@ -215,7 +223,15 @@ def Fast_APSP( W ):
 ```
 
 ---
-## Outline
+<!-- .slide: data-background-image="https://sermons.seanho.com/img/bg/unsplash-DLwUVlzrP0Q-waves_rocks.jpg" -->
+## Outline for today
++ Single-source shortest paths
+  + Dijkstra: \`O(|V| log |V| + |E|)\`
++ All-pairs shortest paths
+  + Dynamic programming by path length: \`O(|V|^4)\`
+  + Exponential speedup: \`O(|V|^3 log |V|)\`
+  + **Floyd-Warshall (dyn prog by vertex subset):** \`O(|V|^3)\`
+  + Johnson (iterative Dijkstra): \`O(|V|^2 log |V| + |V||E|)\`
 
 ---
 ## Floyd-Warshall: substructure
@@ -273,7 +289,15 @@ def FloydWarshall( W ):
     even *faster*!
 
 ---
-## Outline
+<!-- .slide: data-background-image="https://sermons.seanho.com/img/bg/unsplash-DLwUVlzrP0Q-waves_rocks.jpg" -->
+## Outline for today
++ Single-source shortest paths
+  + Dijkstra: \`O(|V| log |V| + |E|)\`
++ All-pairs shortest paths
+  + Dynamic programming by path length: \`O(|V|^4)\`
+  + Exponential speedup: \`O(|V|^3 log |V|)\`
+  + Floyd-Warshall (dyn prog by vertex subset): \`O(|V|^3)\`
+  + **Johnson (iterative Dijkstra):** \`O(|V|^2 log |V| + |V||E|)\`
 
 ---
 ## Dijkstra for all-pairs
@@ -323,7 +347,15 @@ def Johnson( G, w ):
 + **Complexity**: \`O(|V|^2 log |V| + |V||E|)\`
 
 ---
-## Outline
+<!-- .slide: data-background-image="https://sermons.seanho.com/img/bg/unsplash-DLwUVlzrP0Q-waves_rocks.jpg" -->
+## Outline for today
++ **Single-source** shortest paths
+  + **Dijkstra**: \`O(|V| log |V| + |E|)\`
++ **All-pairs** shortest paths
+  + **Dynamic** programming by *path length*: \`O(|V|^4)\`
+  + **Exponential** speedup: \`O(|V|^3 log |V|)\`
+  + **Floyd-Warshall** (dyn prog by *vertex subset*): \`O(|V|^3)\`
+  + **Johnson** (iterative Dijkstra): \`O(|V|^2 log |V| + |V||E|)\`
 
 ---
 <!-- .slide: data-background-image="https://sermons.seanho.com/img/bg/unsplash-DLwUVlzrP0Q-waves_rocks.jpg" class="empty" -->
