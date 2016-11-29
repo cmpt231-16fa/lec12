@@ -302,8 +302,8 @@ def FloydWarshall( W ):
 
 ---
 ## F-W for transitive closure
-+ The **transitive closure** \`(V, E\*)\` of *(V, E)* is:
-  + *(i,j)* &in; \`E\*\` &hArr; &exist; **path** *i* &#x21DD; *j*
++ The **transitive closure** \`(V, E\*\*)\` of *(V, E)* is:
+  + *(i,j)* &in; \`E\*\*\` &hArr; &exist; **path** *i* &#x21DD; *j*
     + i.e., if *j* is **reachable** from *i*
 + One method: run **Floyd-Warshall** with *w=1* on all edges
   + &exist; path *i* &#x21DD; *j* iff \`d\_(ij) < oo\`
