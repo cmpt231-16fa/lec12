@@ -174,7 +174,8 @@ def ssspDijkstra( V, E, w, src ):
     or \`O(|V|^3 log |V|)\` if *dense*
   + **Fibonacci heap**: \`O(|V|^2 log |V| + |V||E|)\`,
     or \`O(|V|^3)\` if *dense*
-+ **Floyd-Warshall**: \`O(|V|^3)\`, *even* if dense
++ **Floyd-Warshall**: \`O(|V|^3)\`, *even* if dense,
+  <br/> and handles negative edges
 
 ---
 ## Dynamic prog: recurrence
@@ -261,6 +262,9 @@ def Fast_APSP( W ):
   + By **induction**, the subpaths are **optimal**
   + Thus, every **shortest** path in *{1 .. k}* has subpaths <br/>
     that are themselves **shortest** paths
+
+![Floyd-Warshall proof, Fig 25-3](static/img/Fig-25-3.svg)
+<!-- .element: style="width:60%" -->
 
 ---
 ## Floyd-Warshall: solution
