@@ -76,6 +76,7 @@ def ssspBellmanFord( V, E, w, src ):
 ---
 ## Dijkstra's algo for SSSP
 + **Doesn't** handle *negative-weight* edges
+  + Assumes *adding* an edge always *increases* cost
 + *Weighted* version of **breadth-first** search
 + Use **priority queue** instead of FIFO
   + Keys are the **shortest-path** estimates *v.d*
@@ -145,15 +146,15 @@ def ssspDijkstra( V, E, w, src ):
 ## Single-source shortest paths
 + Generic **outline**: *relax* edges
   + To iteratively find *shortest distance* *&delta;* to each vertex
-+ **Bellman-Ford**:
++ **Bellman-Ford**: total time O( *|V| |E|* )
   + Relax *all* edges, *|V|-1* times
-  + **Total** time: O( *|V| |E|* )
   + Only one pass needed if *acyclic*, using *topological sort*
-+ **Dijkstra**:
-  + *BFS* from source vertex
-  + Update *shortest distance* as we go
++ **Dijkstra**: O( *|V| lg |V|* + *|E|* )
+  + *BFS* from source, updating *shortest distance* as we go
   + Use *Fibonacci heap* for *priority queue*
-  + **Total** time: O( *|V| lg |V|* + *|E|* )
+  + Cannot handle *negative-weight* edges
+    + e.g., *forex* (currency exchange): profit/loss
+    + e.g., *energy* (chemical reactions): gain/loss of energy
 
 ---
 <!-- .slide: data-background-image="https://sermons.seanho.com/img/bg/unsplash-DLwUVlzrP0Q-waves_rocks.jpg" -->
