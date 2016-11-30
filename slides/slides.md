@@ -153,8 +153,9 @@ def ssspDijkstra( V, E, w, src ):
   + *BFS* from source, updating *shortest distance* as we go
   + Use *Fibonacci heap* for *priority queue*
   + Cannot handle *negative-weight* edges
-    + e.g., *forex* (currency exchange): profit/loss
-    + e.g., *energy* (chemical reactions): gain/loss of energy
++ *Negative*-weight edges:
+  + e.g., *forex* (currency exchange): profit/loss
+  + e.g., *energy* (chemical reactions): gain/loss of energy
 
 ---
 <!-- .slide: data-background-image="https://sermons.seanho.com/img/bg/unsplash-DLwUVlzrP0Q-waves_rocks.jpg" -->
