@@ -208,12 +208,12 @@ def ssspDijkstra( V, E, w, src ):
 
 ```
 def APSPExtend( L, W ):
-  let M = L
+  let M = new matrix, |V| x |V|
   for i in 2 .. |V|:
     for j in 1 .. |V|:
       M[ i, j ] = infinity
       for k in 1 .. |V|:
-        M[ i, j ] = min( M[ i, j ], M[ i, k ] + W[ k, j ] )
+        M[ i, j ] = min( M[ i, j ], L[ i, k ] + W[ k, j ] )
   return M
 ```
 
