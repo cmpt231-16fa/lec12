@@ -1,7 +1,6 @@
 # Lecture 12, [CMPT231](https://cmpt231-16fa.github.io/)
 ## Single-Source: Dijkstra's Algorithm
 ## All-Pairs Shortest Path
-## NP-Completeness
 
 [![Travis-CI build status](https://travis-ci.org/cmpt231-16fa/lec12.svg)](https://travis-ci.org/cmpt231-16fa/lec12)
 [![Node dependencies](https://david-dm.org/cmpt231-16fa/lec12.svg)](https://david-dm.org/cmpt231-16fa/lec12)
