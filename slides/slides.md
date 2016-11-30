@@ -121,7 +121,8 @@ def ssspDijkstra( V, E, w, src ):
 ## Dijkstra: correctness
 + So *x.d* = *&delta;(src,d)* (i.e., *x* has **converged**)
 + By **convergence** property, after we **relaxed** *(x,y)*,
-  + now *y.d* = *&delta;(src,y)* (i.e., *y* has **converged**)
+  + because *(x,y)* is on the **shortest path** to *u*,
+  + so now *y.d* = *&delta;(src,y)* (i.e., *y* has **converged**)
   + And *y* is on the **shortest path**, so *&delta;(src,y)* &le; *&delta;(src,u)* &le; *u.d*
 + But **both** *y* and *u* &in; *Q* when we `popMin()`, so *u.d* &le; *y.d*
 + Hence *u.d* = *y.d* = *&delta;(src,u)*, a **contradiction**
@@ -171,7 +172,7 @@ def ssspDijkstra( V, E, w, src ):
 + **Output**: *|V|* x *|V|* matrix *D* = \`(delta\_(ij))\`
   + **Shortest-path** distances from each vertex *i* to *j*
 + **Naive** solution: do *Bellman-Ford* for each vertex:
-  + \`O(|V|^2 E)\`: if **dense**, then *E* \`in Theta(|V|^2)\`,
+  + \`O(|V|^2 |E|)\`: if **dense**, then *|E|* \`in Theta(|V|^2)\`,
     so \`O(|V|^4)\`
 + If no *negative* edges, try **Dijkstra**, *|V|* times:
   + **Binary heap**: \`O( |V| |E| log |V| )\`,
@@ -179,7 +180,7 @@ def ssspDijkstra( V, E, w, src ):
   + **Fibonacci heap**: \`O(|V|^2 log |V| + |V||E|)\`,
     \`= O(|V|^3)\` if *dense*
 + **Floyd-Warshall**: \`O(|V|^3)\`, *even* if dense,
-  <br/> and handles negative edges
+  <br/> and handles *negative* edges
 
 ---
 ## Dynamic prog: recurrence
@@ -207,8 +208,8 @@ def ssspDijkstra( V, E, w, src ):
 
 ```
 def APSPExtend( L, W ):
-  let M = new |V| x |V| matrix
-  for i in 1 .. |V|:
+  let M = L
+  for i in 2 .. |V|:
     for j in 1 .. |V|:
       M[ i, j ] = infinity
       for k in 1 .. |V|:
@@ -274,6 +275,8 @@ def Fast_APSP( W ):
 
 ---
 ## Floyd-Warshall: solution
++ **Recurrence**: \`d\_(ij)^((k))
+  = min(d\_(ij)^((k-1)), d\_(ik)^((k-1)) + d\_(kj)^((k-1)))\`
 
 ```
 def FloydWarshall( W ):
@@ -285,9 +288,6 @@ def FloydWarshall( W ):
     D = D'
   return D
 ```
-
-+ **Recurrence**: \`d\_(ij)^((k))
-  = min(d\_(ij)^((k-1)), d\_(ik)^((k-1)) + d\_(kj)^((k-1)))\`
 
 <div class="imgbox"><div><ul>
 <li> Either <em>k</em> <strong>not</strong> on path, or <br/>
