@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title><%= pkg.description %></title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link rel=icon href="static/img/cross.svg" sizes="any" type="image/svg+xml" />
+
+    <% revealjs = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1' %>
+
+    <% pkg.config.css.forEach( function(css) { %>
+    <link rel="stylesheet" href="<%= css.href %>" integrity="<%= css.integrity %>" crossorigin="anonymous" />
+    <% } ) %>
+
+    <link rel="stylesheet" href="static/css/boldblack.css" id="theme" />
+    <link rel="stylesheet" href="static/css/slides.css" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '<%= revealjs %>/css/print/pdf.min.css' : '<%= revealjs%>/css/print/paper.min.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+
+  </head>
+  <body>
+    <div class="reveal">
+
+      <noscript><div class="noscript">
+        <h1><%= pkg.description %></h1>
+        <p>(Please see PDF link below)</p>
+      </div></noscript>
+
+      <div class="slides">
+        <% pkg.config.slides.forEach( function(md) { %>
+        <section data-markdown data-charset="utf8"
+          data-separator="^\s{0,3}-\s*-\s*-[-\s]*$"
+          data-separator-vertical="^\s{0,3}\*\s*\*\s*\*[\*\s]*$"
+          data-separator-notes="^\s{0,3}>\s*>\s*>[>\s]*$">
+          <script type="text/template">
+        <%= grunt.file.read(md) %>
+          </script>
+        </section>
+        <% } ) %>
+      </div>
+
+      <div id="footer"><%= pkg.config.pretty_url %>
+        <span class="links">
+          <a href="https://github.com/<%= pkg.repository %>">
+            <i class="fa fa-github fa-inverse"></i></a>
+          <a href="static/<%= pkg.shortname %>.pdf">
+            <i class="fa fa-file-pdf-o fa-inverse"></i></a>
+        </span>
+        <span class="commit"><%= pkg.commit %></span>
+      </div>
+
+    </div>
+
+    <% pkg.config.js.forEach( function(js) { %>
+    <script src="<%= js.src %>" integrity="<%= js.integrity %>" crossorigin="anonymous"></script>
+    <% } ) %>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        "HTML-CSS": { scale: 77 }
+      });
+    </script>
+
+    <script>
+      Reveal.initialize({
+        history: false,
+        maxScale: 4.0,
+        slideNumber: 'c/t',
+        pdfMaxPagesPerSlide: 1,
+
+        math: {
+          config: 'AM_HTMLorMML'
+        },
+
+        multiplex: {
+          url: '<%= pkg.config.multiplex.url %>',
+          id : '<%= pkg.config.multiplex.id  %>',
+          secret: Reveal.getQueryHash().s || null
+        },
+
+        dependencies: [
+          { src: '<%= revealjs %>/plugin/markdown/marked.js' },
+          { src: '<%= revealjs %>/plugin/markdown/markdown.min.js' },
+          { src: 'https://sermons.seanho.com/lib/reveal.js-3.4.1/plugin/notes/notes.js', async:true },
+          { src: '<%= revealjs %>/plugin/math/math.min.js', async:true },
+          { src: '<%= revealjs %>/plugin/highlight/highlight.min.js', async:true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js', async:true },
+          Reveal.getQueryHash().s ?  { src: '<%= revealjs %>/plugin/multiplex/master.min.js', async:true } : { src: '<%= revealjs %>/plugin/multiplex/client.min.js', async:true },
+          { src: 'https://cdnjs.cloudflare.com/ajax/libs/classlist/2014.01.31/classList.min.js', condition: function() { return !document.body.classList; } }
+        ]
+      });
+
+    </script>
+  </body>
+</html>

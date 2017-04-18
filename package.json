@@ -1,9 +1,9 @@
 {
   "name": "@cmpt231-16fa/lec12",
-  "version": "1.0.0",
   "repository": "cmpt231-16fa/lec12",
   "description": "Lecture 12, CMPT231",
   "keywords": ["slides", "lectures", "talks", "ppt"],
+  "version": "1.2.5",
   "author": "Sean Ho <seanho@seanho.com> (http://seanho.com)",
   "config": {
     "pretty_url": "cmpt231.seanho.com/lec12",
@@ -22,6 +22,28 @@
         "city": "Langley",
         "date": "2016-11-29"
       }
+    ],
+    "slides": [ "slides/slides.md" ],
+    "css": [
+      {
+        "href": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
+       	"integrity": "sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0="
+      },{
+        "href": "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/reveal.min.css",
+       	"integrity": "sha256-5z1tvl5q2pgp1SJIkfLhpdE5JfcAAN1FDBQe3YzlUdg="
+      },{
+        "href": "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-dark.min.css",
+       	"integrity": "sha256-akwTLZec/XAFvgYgVH1T5/369lhA2Efr22xzCNl1nHs="
+      }
+    ],
+    "js": [
+      {
+        "src": "https://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.min.js",
+       	"integrity": "sha256-+09kLhwACKXFPDvqo4xMMvi4+uXFsRZ2uYGbeN1U8sI="
+      },{
+        "src": "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/js/reveal.min.js",
+       	"integrity": "sha256-iSS1lZpXv81SOmVH9u7LxPptbmNmVc40zG/1R2cKUbk="
+      }
     ]
   },
   "license": "CC-BY-SA-4.0",
@@ -29,18 +51,18 @@
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-contrib-connect": "^1.0.2",
-    "grunt-contrib-watch": "^1.0.0",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-jshint": "^1.0.0",
     "load-grunt-tasks": "^3.5.2",
-    "grunt-exec": "^1.0.1",
+    "grunt-exec": "^2.0.0",
+    "grunt-curl": "^2.2.0",
     "grunt-build-control": "^0.7.1",
     "grunt-coffeelint": "^0.0.16",
     "coffeelint": "^1.16.0",
-    "phantom": "^3.0.1"
+    "phantom": "^4.0.1"
   },
   "scripts": {
     "test": "grunt test",
+    "pdf": "grunt pdf",
     "deploy": "grunt deploy"
   }
 }
