@@ -3,7 +3,7 @@
   "repository": "cmpt231-16fa/lec12",
   "description": "Lecture 12, CMPT231",
   "keywords": ["slides", "lectures", "talks", "ppt"],
-  "version": "1.2.5",
+  "version": "1.3.0",
   "author": "Sean Ho <seanho@seanho.com> (http://seanho.com)",
   "config": {
     "pretty_url": "cmpt231.seanho.com/lec12",
@@ -58,7 +58,7 @@
     "grunt-build-control": "^0.7.1",
     "grunt-coffeelint": "^0.0.16",
     "coffeelint": "^1.16.0",
-    "phantom": "^4.0.1"
+    "grunt-git": "^1.0.3"
   },
   "scripts": {
     "test": "grunt test",
