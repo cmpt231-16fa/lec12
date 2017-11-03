@@ -2,6 +2,9 @@
  * Local styles specific to my presentations
  *********************************************/
 
+/* Smaller font for lecture */
+html { font-size: 40px }
+
 /* Shade background images */
 section[data-background-image] {
   background-color: rgba(0,0,0,0.6);
