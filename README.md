@@ -4,7 +4,7 @@
 
 [![Travis-CI build status](https://travis-ci.org/cmpt231-16fa/lec12.svg)](https://travis-ci.org/cmpt231-16fa/lec12)
 [![Node dependencies](https://david-dm.org/cmpt231-16fa/lec12.svg)](https://david-dm.org/cmpt231-16fa/lec12)
-[![Node dev status](https://david-dm.org/cmpt231-16fa/lec12/dev-status.svg)](https://david-dm.org/cmpt231-16fa/lec12#info=devDependencies)
+[![Node dev status](https://david-dm.org/cmpt231-16fa/lec12/dev-status.svg)](https://david-dm.org/cmpt231-16fa/lec12?type=dev)
 
 Template presentation: [reveal-skel](https://github.com/sermons/reveal-skel)
 
