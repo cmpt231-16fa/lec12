@@ -2,15 +2,13 @@
 # Reveal-Skel
 ## A template for Reveal.js-based presentations
 
-<div>
 [![Travis builds](https://travis-ci.org/sermons/reveal-skel.svg)](https://travis-ci.org/sermons/reveal-skel)
 [![Node deps](https://david-dm.org/sermons/reveal-skel.svg)](https://david-dm.org/sermons/reveal-skel)
 [![Node devDeps](https://david-dm.org/sermons/reveal-skel/dev-status.svg)](https://david-dm.org/sermons/reveal-skel?type=dev)
-</div>
 
 [(open master view)](http://reveal-skel.seanho.com/?s=45ba034647cea150 "ref")
 
-[(img: Ryan Hutton, CC0)](https://unsplash.com/photos/Jztmx9yqjBw "caption")
+[Ryan Hutton](https://unsplash.com/photos/Jztmx9yqjBw "caption")
 
 >>>
 + Speaker notes go here.
@@ -27,15 +25,14 @@ Six underscores create a horizontal rule in the notes
 [###](#/outline "secret")
 
 ---
-<!-- .slide: <%= bg("unsplash-Jztmx9yqjBw-stars.jpg") %> id="outline" -->
+<!-- .slide: <%= bg("unsplash-Jztmx9yqjBw-stars.jpg") %> id="outline" class="outline" -->
 ## Outline [(ref)](# "ref")
 1. Point **One** <%= bible('(Rom 1:1,5)') %>
 2. Point **Two** <%= bible('rom1.2', '(v2)') %>
 3. Point **Three** <%= bible('rom1.3-4', '(v3-4)', 'ESV') %>
 
-<!-- .element: class="outline" comment="need previous blank line!" -->
-
 ******
+<!-- six stars create a vertical slide -->
 ## Point One
 ```
 class BSTNode:
@@ -58,51 +55,48 @@ class BST:
       else:               # found it!
         return cur
 ```
+<!-- .element: data-line-numbers="14-17" -->
 
 ******
 <!-- .slide: data-background="white" -->
 # Review question for Point **One**
 
 ---
-<!-- .slide: <%= bg("unsplash-Jztmx9yqjBw-stars.jpg") %> -->
+<!-- .slide: <%= bg("unsplash-Jztmx9yqjBw-stars.jpg") %> class="outline" -->
 ## Outline <span class="zh">大綱</span>
-1. Point *One* <span class="ref">(v1)</span>
-2. **Point Two** <span class="ref">(v2)</span>
-3. Point *Three* <span class="ref">(v3)</span>
+1. Point *One* [(v1)](# "ref")
+2. **Point Two** [(v2)](# "ref")
+3. Point *Three* [(v3)](# "ref")
   + A bit of math: <br>
     \` hat(f)(omega) = int\_-oo^oo f(x)e^(-2pi x omega) dx \`
-
-<!-- .element: class="outline" -->
 
 ******
 ## Point Two
 
-<div class="imgbox">
-<div>
-Yay for **multi-col** layout! <br/>
-1/3 width for text <br/>
-No block-level markdown
+<!-- HTML in separate paragraph -->
+<div class="imgbox"><div>
+
++ **Multi-col** layout!
++ 1/3 width for text
++ `imgbox` div
+
 </div>
 <div style="flex:2">
-![Stars](static/bg/unsplash-Jztmx9yqjBw-stars.jpg)
-<div class="caption">
-(img credit: Ryan Hutton)
-</div>
-</div>
-</div>
+
+![Stars](https://sermons.seanho.com/img/bg/unsplash-Jztmx9yqjBw-stars.jpg)
+
+</div></div>
 
 ******
 <!-- .slide: data-background="white" -->
 # Review question for Point **Two**
 
 ---
-<!-- .slide: <%= bg("unsplash-Jztmx9yqjBw-stars.jpg") %> -->
+<!-- .slide: <%= bg("unsplash-Jztmx9yqjBw-stars.jpg") %> class="outline" -->
 ## Outline
-1. Point *One* <span class="ref">(v1)</span>
-2. Point *Two* <span class="ref">(v2)</span>
-3. **Point Three** <span class="ref">(v3)</span>
-
-<!-- .element: class="outline" -->
+1. Point *One* [(v1)](# "ref")
+2. Point *Two* [(v2)](# "ref")
+3. **Point Three** [(v3)](# "ref")
 
 ******
 ## Point Three
@@ -120,13 +114,11 @@ No block-level markdown
 # Review question for Point **Three**
 
 ---
-<!-- .slide: <%= bg("unsplash-Jztmx9yqjBw-stars.jpg") %> -->
+<!-- .slide: <%= bg("unsplash-Jztmx9yqjBw-stars.jpg") %> class="outline" -->
 ## Outline
-1. Point **One** <span class="ref">(v1)</span>
-2. Point **Two** <span class="ref">(v2)</span>
-3. Point **Three** <span class="ref">(v3)</span>
-
-<!-- .element: class="outline" -->
+1. Point **One** [(v1)](# "ref")
+2. Point **Two** [(v2)](# "ref")
+3. Point **Three** [(v3)](# "ref")
 
 ---
 <!-- .slide: <%= bg("unsplash-Jztmx9yqjBw-stars.jpg") %> class="empty" -->

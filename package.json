@@ -8,7 +8,7 @@
     "talks",
     "ppt"
   ],
-  "version": "1.6.12",
+  "version": "1.7.3",
   "author": "Sean Ho <seanho@seanho.com> (http://seanho.com)",
   "config": {
     "pretty_url": "cmpt231.seanho.com/lec12",
@@ -32,45 +32,42 @@
     "slides": [
       "slides/slides.md"
     ],
-    "reveal": "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0",
+    "reveal": "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0",
+    "mathjax": "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js",
     "css": [
       {
         "href": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
         "integrity": "sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0="
       },
       {
-        "href": "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.min.css",
-        "integrity": "sha256-ol2N5Xr80jdDqxK0lte3orKGb9Ja3sOnpAUV7TTADmg="
+        "href": "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/reveal.min.css",
+        "integrity": "sha256-OxiHrn+gXudPDHxTvXiQzeFjZU/FllSSPmOOYAZ1O/g="
       },
       {
-        "href": "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css",
-        "integrity": "sha256-akwTLZec/XAFvgYgVH1T5/369lhA2Efr22xzCNl1nHs="
+        "href": "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/atom-one-dark.min.css",
+        "integrity": "sha256-GA29iW/iYj9FcuQQktvW45pRzHvZeFfgeFvA4tGVjpM="
       }
     ],
     "js": [
       {
-        "src": "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js",
-        "integrity": "sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw="
+        "src": "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js",
+        "integrity": "sha256-js+I1fdbke/DJrW2qXQlrw7VUEqmdeFeOW37UC0bEiU="
       },
       {
-        "src": "https://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.min.js",
-        "integrity": "sha256-+09kLhwACKXFPDvqo4xMMvi4+uXFsRZ2uYGbeN1U8sI="
+        "src": "https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.slim.js",
+        "integrity": "sha256-RtMTraB5gGlLER0FkKBcaXCmZCQCxkKS/dXm7MSEoEY="
       },
       {
-        "src": "https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.slim.js",
-        "integrity": "sha256-jniDwC1PC9OmGoyPxA9VpGvgwDYyxsMqu5Q4OrF5wNY="
+        "src": "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/js/reveal.min.js",
+        "integrity": "sha256-pv4AarTAzSO6lz+bbMPwmV29XMjkzmFOn601b2pWqXE="
       },
       {
-        "src": "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.min.js",
-        "integrity": "sha256-ixSKHrWAL2k0mqVSRju9+to2/uZSEK9+kJRfdNBolG8="
+        "src": "https://cdnjs.cloudflare.com/ajax/libs/marked/0.7.0/marked.min.js",
+        "integrity": "sha256-0Ed5s/n37LIeAWApZmZUhY9icm932KvYkTVdJzUBiI4="
       },
       {
-        "src": "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/marked.js",
-        "integrity": "sha256-c6mIBJmjwIEMzRFz4hJTWcWDvcGnqJUicbkA6bsQoYE="
-      },
-      {
-        "src": "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/markdown.min.js",
-        "integrity": "sha256-k07Q1HjAu3jUhg23V+WcK14cqHXbgRpIdYHjfLOkS+c="
+        "src": "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/plugin/markdown/markdown.min.js",
+        "integrity": "sha256-p6zZf7+dsrD1lcLQCXRgmXAAMyr9pWWCP4a9KfB0klE="
       }
     ],
     "plugins": [
@@ -80,18 +77,22 @@
   },
   "license": "CC-BY-SA-4.0",
   "private": true,
+  "dependencies": {
+    "reveal.js": "^3.8.0",
+    "highlight.js": "^9.15.8",
+    "socket.io": "^2.2.0",
+    "marked": "^0.7.0"
+  },
   "devDependencies": {
-    "reveal.js": "^3.6.0",
-    "grunt": "^1.0.1",
-    "load-grunt-tasks": "^3.5.2",
-    "grunt-contrib-connect": "^1.0.2",
+    "grunt": "^1.0.4",
+    "load-grunt-tasks": "^5.0.0",
+    "grunt-contrib-connect": "^2.0.0",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-sass": "^2.0.0",
+    "node-sass": "^4.12.0",
+    "grunt-sass": "^3.0.2",
     "grunt-exec": "^3.0.0",
-    "grunt-coffeelint": "^0.0.16",
-    "coffeelint": "^2.0.7",
-    "qrcode": "^1.0.0",
-    "decktape": "^2.6.1"
+    "qrcode": "^1.4.0",
+    "decktape": "^2.9.3"
   },
   "scripts": {
     "postinstall": "grunt install",
