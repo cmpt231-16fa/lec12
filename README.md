@@ -2,7 +2,7 @@
 ## Single-Source: Dijkstra's Algorithm
 ## All-Pairs Shortest Path
 
-[![Travis-CI build status](https://travis-ci.org/cmpt231-16fa/lec12.svg)](https://travis-ci.org/cmpt231-16fa/lec12)
+[![Travis-CI build status](https://api.travis-ci.org/cmpt231-16fa/lec12.svg)](https://travis-ci.org/github/cmpt231-16fa/lec12)
 [![Node dependencies](https://david-dm.org/cmpt231-16fa/lec12.svg)](https://david-dm.org/cmpt231-16fa/lec12)
 [![Node dev status](https://david-dm.org/cmpt231-16fa/lec12/dev-status.svg)](https://david-dm.org/cmpt231-16fa/lec12?type=dev)
 
